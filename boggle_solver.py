@@ -205,12 +205,12 @@ def main():
             self.dictionary[i] = dictionary[i].lower()
 
     def is_grid_valid(self, grid):
-        allowed_values = {"qu", "st", "i"} | set("abcdefghjklmnopqrstuvwxyz")
-        for row in grid:
-            for cell in row:
-                if cell.lower() not in allowed_values:
-                    return False
-        return True
+      for row in grid:
+          for cell in row:
+              if not cell.isalpha():
+                  return False
+      return True
+
 
     def create_hash_map(self, dictionary):
         # Create hash map with words and prefixes
